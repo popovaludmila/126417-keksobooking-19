@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Людмила Попова](https://up.htmlacademy.ru/javascript/19/user/126417).
-* Наставник: [Павел Белик] (https://htmlacademy.ru/profile/id84572).
+* Наставник: [Павел Белик](https://htmlacademy.ru/profile/id84572).
 
 ---
 
