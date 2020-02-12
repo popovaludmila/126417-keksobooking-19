@@ -166,17 +166,3 @@ similarMapElement.style.top = location.y + (65 + 22);
 similarMapElement.src = ad.avatar;
 similarMapElement.alt = ad.title;
 similarMapElement.appendChild(fragment);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
