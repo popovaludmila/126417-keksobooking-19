@@ -88,7 +88,7 @@ function getRandomElementFromArrayWithRemove(arr) {
 
 function getRandomSliceFromArray(arr) {
   var result = [];
-  var arrClone = arr.slice()
+  var arrClone = arr.slice();
   for (var i = 0; i <= getRandomInt(0, arr.length); i++) {
     result.push(getRandomElementFromArrayWithRemove(arrClone));
   }
@@ -124,7 +124,7 @@ function generateAd() {
       'photos': getRandomSliceFromArray(AD_PHOTOS)
     },
     'location': location
-  }
+  };
 }
 
 var ads = [];
@@ -151,11 +151,7 @@ var renderAd = function (ad) {
 
 var fragment = document.createDocumentFragment();
 for (i = 0; i < ads.length; i++) {
-  fragment.appendChild(renderAd(ad[i]));
+  fragment.appendChild(renderAd(ads[i]));
 }
 
-similarMapElement.style.left = location.x + 32;
-similarMapElement.style.top = location.y + (65 + 22);
-similarMapElement.src = ad.avatar;
-similarMapElement.alt = ad.title;
 similarMapElement.appendChild(fragment);
