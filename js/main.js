@@ -122,16 +122,16 @@ for (var i = 0; i < 8; i++) {
 var renderAd = function (ad) {
   var adItem = similarMapTemplate.cloneNode(true);
 
-  adItem.querySelector('.popup__avatar').style.img = ad.avatar;
-  adItem.querySelector('.popup__title').style.textContent = ad.title;
-  adItem.querySelector('.popup__text--address').style.textContent = ad.address;
-  adItem.querySelector('.popup__text--price').style.textContent = ad.price;
-  adItem.querySelector('.popup__type').style.textContent = ad.avatar;
-  adItem.querySelector('.popup__text--capacity').style.textContent = ad.rooms + ' комнаты для' + ad.guests + ' гостей';
-  adItem.querySelector('.popup__text--time').style.textContent = 'Заезд после ' + ad.checkin + ',' + ' выезд до ' + ad.checkout;
-  adItem.querySelector('.popup__features').style.textContent = ad.features;
-  adItem.querySelector('.popup__description').style.textContent = ad.description;
-  adItem.querySelector('.popup__ptotos').style.img = ad.photos;
+  adItem.querySelector('.popup__avatar').style.img = ad.author.avatar;
+  adItem.querySelector('.popup__title').style.textContent = ad.offer.title;
+  adItem.querySelector('.popup__text--address').style.textContent = ad.offer.address;
+  adItem.querySelector('.popup__text--price').style.textContent = ad.offer.price;
+  adItem.querySelector('.popup__type').style.textContent = ad.offer.type;
+  adItem.querySelector('.popup__text--capacity').style.textContent = ad.offer.rooms + ' комнаты для' + ad.offer.guests + ' гостей';
+  adItem.querySelector('.popup__text--time').style.textContent = 'Заезд после ' + ad.offer.checkin + ',' + ' выезд до ' + ad.offer.checkout;
+  adItem.querySelector('.popup__features').style.textContent = ad.offer.features;
+  adItem.querySelector('.popup__description').style.textContent = ad.offer.description;
+  adItem.querySelector('.popup__ptotos').style.img = ad.offer.photos;
 
   return adItem;
 };
@@ -143,6 +143,6 @@ for (var i = 0; i < ads.length; i++) {
 
 similarMapElement.style.left = location.x + 32;
 similarMapElement.style.top = location.y + (65 + 22);
-similarMapElement.src = ad.avatar;
-similarMapElement.alt = ad.title;
+similarMapElement.src = ad.offer.avatar;
+similarMapElement.alt = ad.offer.title;
 similarMapElement.appendChild(fragment);
