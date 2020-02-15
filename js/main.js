@@ -138,7 +138,7 @@ var renderAd = function (ad) {
   adItem.querySelector('.popup__avatar').src = ad.author.avatar;
   adItem.querySelector('.popup__title').textContent = ad.offer.title;
   adItem.querySelector('.popup__text--address').textContent = ad.offer.address;
-  adItem.querySelector('.popup__text--price').textContent = ad.offer.price + ' руб/ночь';
+  adItem.querySelector('.popup__text--price').textContent = ad.offer.price + '₽/ночь';
   adItem.querySelector('.popup__type').textContent = ad.offer.type;
   adItem.querySelector('.popup__text--capacity').textContent = ad.offer.rooms + ' комнаты для ' + ad.offer.guests + ' гостей';
   adItem.querySelector('.popup__text--time').textContent = 'Заезд после ' + ad.offer.checkin + ',' + ' выезд до ' + ad.offer.checkout;
@@ -152,6 +152,7 @@ var renderAd = function (ad) {
 var fragment = document.createDocumentFragment();
 for (i = 0; i < ads.length; i++) {
   fragment.appendChild(renderAd(ads[i]));
+
 }
 
 similarMapElement.appendChild(fragment);
