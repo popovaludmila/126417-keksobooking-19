@@ -169,7 +169,6 @@ var renderAd = function (ad) {
 var fragment = document.createDocumentFragment();
 for (i = 0; i < ads.length; i++) {
   fragment.appendChild(renderAd(ads[i]));
-
 }
 
 similarMapElement.appendChild(fragment);
