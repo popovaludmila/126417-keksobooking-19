@@ -140,7 +140,7 @@ var getPluralText = function (num, one, two, many) {
   }
 
   num = num % 10;
-  if (num == 1) {
+  if (num === 1) {
     return one;
   }
   if (num > 1 && num < 5) {
