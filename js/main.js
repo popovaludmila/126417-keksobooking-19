@@ -133,13 +133,19 @@ for (var i = 0; i < 8; i++) {
 }
 
 var getPluralText = function (num, one, two, many) {
-  var num = num % 100;
+  num = num % 100;
 
-  if (num >= 5 && num <= 20) return many;
+  if (num >= 5 && num <= 20) {
+    return many;
+  }
 
   num = num % 10;
-  if (num == 1) return one;
-  if (num > 1 && num < 5) return two;
+  if (num == 1) {
+    return one;
+  }
+  if (num > 1 && num < 5) {
+    return two;
+  }
   return many;
 };
 
