@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 'use strict';
 
 var AD_AVATARS = [
@@ -158,4 +156,3 @@ for (i = 0; i < ads.length; i++) {
 }
 
 similarMapElement.appendChild(fragment);
->>>>>>> 47ad0c0... Update main.js
