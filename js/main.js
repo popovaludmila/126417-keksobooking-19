@@ -185,10 +185,6 @@ var selectAll = document.querySelectorAll('select');
 
 var address = document.querySelector('#address');
 
-var capacity = document.querySelector('#capacity');
-
-var roomNumber = document.querySelector('#roon_number');
-
 var locationMapPin = generateLocation();
 
 var leftCoordMapPin = MAP_PIN_LEFT + MAP_PIN_WIDTH / 2;
