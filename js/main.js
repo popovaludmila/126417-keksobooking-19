@@ -109,7 +109,6 @@ function generateLocation() {
   };
 }
 
-
 function generateAd() {
   var location = generateLocation();
 
@@ -185,6 +184,10 @@ var fieldsetAll = document.querySelectorAll('fieldset');
 var selectAll = document.querySelectorAll('select');
 
 var address = document.querySelector('#address');
+
+var capacity = document.querySelector('#capacity');
+
+var roomNumber = document.querySelector('#roon_number');
 
 var locationMapPin = generateLocation();
 
