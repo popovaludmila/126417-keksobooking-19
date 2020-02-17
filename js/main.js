@@ -68,6 +68,13 @@ var AD_DESCRIPTIONS = [
   'второй срок'
 ];
 
+var ENTER_KEY = 'Enter';
+var MAP_PIN_LEFT = 570;
+var MAP_PIN_TOP = 375;
+var MAP_PIN_WIDTH = 40;
+var MAP_PIN_HEIGHT = 44;
+var MAP_PIN_AFTER_HEIGHT = 22;
+
 var map = document.querySelector('.map');
 
 var similarMapElement = map.querySelector('.map__pins');
@@ -97,10 +104,11 @@ function getRandomSliceFromArray(arr) {
 function generateLocation() {
   var width = document.querySelector('.map').offsetWidth;
   return {
-    'x': getRandomInt(0, width),
-    'y': getRandomInt(130, 630)
+    'x': getRandomInt(0, width) + MAP_PIN_WIDTH / 2,
+    'y': getRandomInt(130, 630) + MAP_PIN_AFTER_HEIGHT
   };
 }
+
 
 function generateAd() {
   var location = generateLocation();
@@ -172,11 +180,17 @@ for (i = 0; i < ads.length; i++) {
 
 similarMapElement.appendChild(fragment);
 
-var ENTER_KEY = 'Enter';
-
 var mapPinMain = map.querySelector('.map__pin--main');
 var fieldsetAll = document.querySelectorAll('fieldset');
 var selectAll = document.querySelectorAll('select');
+
+var address = document.querySelector('#address');
+
+var locationMapPin = generateLocation();
+
+var leftCoordMapPin = MAP_PIN_LEFT + MAP_PIN_WIDTH / 2;
+var topCoordMapPin = MAP_PIN_TOP + MAP_PIN_HEIGHT / 2;
+address.value = leftCoordMapPin + ', ' + topCoordMapPin;
 
 var cancelInactiveMode = function () {
   for (i = 0; i < fieldsetAll.length; i++) {
@@ -194,7 +208,12 @@ var onMousePress = function (evt) {
   }
 };
 
+var onMapPinSet = function () {
+  address.value = locationMapPin.x + ', ' + locationMapPin.y;
+};
+
 mapPinMain.addEventListener('mousedown', onMousePress);
+mapPinMain.addEventListener('mousemove', onMapPinSet);
 
 mapPinMain.addEventListener('keydown', function (evt) {
   if (evt.key === ENTER_KEY) {
