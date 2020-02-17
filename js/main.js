@@ -69,7 +69,7 @@ var AD_DESCRIPTIONS = [
 ];
 
 var map = document.querySelector('.map');
-map.classList.remove('map--faded');
+//map.classList.remove('map--faded');
 
 var similarMapElement = map.querySelector('.map__pins');
 var similarMapTemplate = document.querySelector('#card').content.querySelector('.map__card');
@@ -172,3 +172,38 @@ for (i = 0; i < ads.length; i++) {
 }
 
 similarMapElement.appendChild(fragment);
+
+var ENTER_KEY = 'Enter';
+
+var mapPinMain = map.querySelector('.map__pin--main');
+var fieldsetAll = document.querySelectorAll('fieldset');
+var selectAll = document.querySelectorAll('select');
+
+console.log(fieldsetAll);
+console.log(selectAll);
+
+var cancelInactiveMode = function () {
+  for (i = 0; i < fieldsetAll.length; i++) {
+    fieldsetAll[i].removeAttribute('disabled');
+  }
+
+  for (i = 0; i < selectAll.length; i++) {
+    selectAll[i].removeAttribute('disabled');
+  }
+};
+
+var onMousePress = function (evt) {
+    if (evt.which == 1) {
+      cancelInactiveMode();
+    }
+
+};
+
+mapPinMain.addEventListener('mousedown', onMousePress);
+
+mapPinMain.addEventListener('keydown', function(evt) {
+  if(evt.key === ENTER_KEY) {
+    cancelInactiveMode();
+  }
+});
+
