@@ -70,35 +70,15 @@
     'второй срок'
   ];
 
-  function generateLocation() {
-    var width = document.querySelector('.map').offsetWidth;
-    return {
-      'x': getRandomInt(0, width) + MAP_PIN_WIDTH / 2,
-      'y': getRandomInt(130, 630) + MAP_PIN_AFTER_HEIGHT
-    };
+  window.data = {
+    AD_AVATARS: AD_AVATARS,
+    AD_TITLES: AD_TITLES,
+    AD_TYPES: AD_TYPES,
+    AD_ROOMS: AD_ROOMS,
+    AD_TIMES: AD_TIMES,
+    AD_FEATURES: AD_FEATURES,
+    AD_PHOTOS: AD_PHOTOS,
+    AD_DESCRIPTIONS: AD_DESCRIPTIONS
   }
 
-  function generateAd() {
-    var location = generateLocation();
-
-    return {
-      'author': {
-        'avatar': getRandomElementFromArrayWithRemove(AD_AVATARS)
-      },
-      'offer': {
-        'title': getRandomElementFromArrayWithRemove(AD_TITLES),
-        'address': location.x + ', ' + location.y,
-        'price': getRandomInt(1000, 50000),
-        'type': getRandomElementFromArray(AD_TYPES),
-        'rooms': getRandomElementFromArray(AD_ROOMS),
-        'guests': getRandomInt(0, 4),
-        'checkin': getRandomElementFromArray(AD_TIMES),
-        'checkout': getRandomElementFromArray(AD_TIMES),
-        'features': getRandomSliceFromArray(AD_FEATURES),
-        'description': getRandomElementFromArrayWithRemove(AD_DESCRIPTIONS),
-        'photos': getRandomSliceFromArray(AD_PHOTOS)
-      },
-      'location': location
-    };
-  }
 })();
