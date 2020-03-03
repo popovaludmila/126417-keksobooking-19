@@ -1,16 +1,24 @@
 'use strict';
 
 (function () {
+
+  var MAP_PIN_LEFT = 570;
+  var MAP_PIN_TOP = 375;
+  var HALF_MAP_PIN_WIDTH = 20;
+  var MAP_PIN_HEIGHT = 44;
+  var MAP_PIN_AFTER_HEIGHT = 22;
+  var width = document.querySelector('.map').offsetWidth;
+
   function generateLocation() {
-    var width = document.querySelector('.map').offsetWidth;
     return {
-      'x': window.random.getRandomInt(0, width) + window.pin.MAP_PIN_WIDTH / 2,
-      'y': window.random.getRandomInt(130, 630) + window.pin.MAP_PIN_AFTER_HEIGHT
+      'x': window.random.getRandomInt(0, width) + HALF_MAP_PIN_WIDTH,
+      'y': window.random.getRandomInt(130, 630) + MAP_PIN_AFTER_HEIGHT
     };
   }
 
+  var location = generateLocation();
+
   function generateAd() {
-    var location = generateLocation();
 
     return {
       'author': {
@@ -51,22 +59,20 @@
   };
 
   window.card = {
-    autor: author.avatar,
-    title: offer.title,
-    address: offer.address,
-    price: offer.price,
-    type: offer.type,
-    rooms: offer.rooms,
-    guests: offer.guests,
-    checkin: offer.checkin,
-    checkout: offer.checkout,
-    features: offer.features,
-    description: offer.description,
-    photos: offer.photos,
-    location: location,
-    ads: ads,
-    getPluralText: getPluralText,
-    generateAd: generateAd
-  }
-
+    getPluralText: getPluralText(),
+    generateAd: generateAd(),
+    author: window.random.getRandomElementFromArrayWithRemove(window.data.AD_AVATARS),
+    title: window.random.getRandomElementFromArrayWithRemove(window.data.AD_TITLES),
+    address: location.x + ', ' + location.y,
+    price: window.random.getRandomInt(1000, 50000),
+    type: window.random.getRandomElementFromArray(window.data.AD_TYPES),
+    rooms: window.random.getRandomElementFromArray(window.data.AD_ROOMS),
+    guests: window.random.getRandomInt(0, 4),
+    checkin: window.random.getRandomElementFromArray(window.data.AD_TIMES),
+    checkout: window.random.getRandomElementFromArray(window.data.AD_TIMES),
+    features: window.random.getRandomSliceFromArray(window.data.AD_FEATURES),
+    description: window.random.getRandomElementFromArrayWithRemove(window.data.AD_DESCRIPTIONS),
+    photos: window.random.getRandomSliceFromArray(window.data.AD_PHOTOS)
+  };
 })();
+

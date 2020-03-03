@@ -27,5 +27,6 @@
     getRandomElementFromArray: getRandomElementFromArray,
     getRandomElementFromArrayWithRemove: getRandomElementFromArrayWithRemove,
     getRandomSliceFromArray: getRandomSliceFromArray
-  }
+  };
 })();
+

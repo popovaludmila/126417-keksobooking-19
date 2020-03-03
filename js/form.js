@@ -11,6 +11,7 @@
   var address = document.querySelector('#address');
 
   var locationMapPin = window.card.location;
+  console.log(locationMapPin);
 
   var leftCoordMapPin = window.pin.MAP_PIN_LEFT + window.pin.MAP_PIN_WIDTH / 2;
   var topCoordMapPin = window.pin.MAP_PIN_TOP + window.pin.MAP_PIN_HEIGHT / 2;
@@ -21,7 +22,7 @@
       fieldsetAll[i].removeAttribute('disabled');
     }
 
-    for (var i = 0; i < selectAll.length; i++) {
+    for (i = 0; i < selectAll.length; i++) {
       selectAll[i].removeAttribute('disabled');
     }
   };

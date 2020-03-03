@@ -1,17 +1,6 @@
 'use strict';
 
 (function () {
-  var MAP_PIN_LEFT = 570;
-  var MAP_PIN_TOP = 375;
-  var MAP_PIN_WIDTH = 40;
-  var MAP_PIN_HEIGHT = 44;
-  var MAP_PIN_AFTER_HEIGHT = 22;
 
-  window.pin = {
-    MAP_PIN_LEFT: MAP_PIN_LEFT,
-    MAP_PIN_TOP: MAP_PIN_TOP,
-    MAP_PIN_WIDTH: MAP_PIN_WIDTH,
-    MAP_PIN_HEIGHT: MAP_PIN_HEIGHT,
-    MAP_PIN_AFTER_HEIGHT: MAP_PIN_AFTER_HEIGHT
-  }
 })();
+
