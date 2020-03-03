@@ -7,16 +7,13 @@
   var mapPinMain = document.querySelector('.map__pin--main');
   var fieldsetAll = document.querySelectorAll('fieldset');
   var selectAll = document.querySelectorAll('select');
-
   var address = document.querySelector('#address');
 
-  var locationMapPin = window.card.location;
-  console.log(locationMapPin);
-
-  var leftCoordMapPin = window.pin.MAP_PIN_LEFT + window.pin.MAP_PIN_WIDTH / 2;
-  var topCoordMapPin = window.pin.MAP_PIN_TOP + window.pin.MAP_PIN_HEIGHT / 2;
+  var leftCoordMapPin = window.card.MAP_PIN_LEFT + window.card.MAP_PIN_WIDTH/2;
+  var topCoordMapPin = window.card.MAP_PIN_TOP + window.card.MAP_PIN_HEIGHT / 2;
   address.value = leftCoordMapPin + ', ' + topCoordMapPin;
 
+  console.log(address.value);
   var cancelInactiveMode = function () {
     for (var i = 0; i < fieldsetAll.length; i++) {
       fieldsetAll[i].removeAttribute('disabled');
