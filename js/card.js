@@ -11,7 +11,7 @@
 
   function generateLocation() {
     return {
-      'x': window.random.getRandomInt(0, width) + MAP_PIN_WIDTH/2,
+      'x': window.random.getRandomInt(0, width) + MAP_PIN_WIDTH / 2,
       'y': window.random.getRandomInt(130, 630) + MAP_PIN_AFTER_HEIGHT
     };
   }

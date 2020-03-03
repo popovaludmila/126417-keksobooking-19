@@ -14,8 +14,6 @@
   var renderAd = function (ad) {
     var adItem = similarMapTemplate.cloneNode(true);
 
-    console.log(ad);
-
     adItem.querySelector('.popup__avatar').src = ad.author.avatar;
     adItem.querySelector('.popup__title').textContent = ad.offer.title;
     adItem.querySelector('.popup__text--address').textContent = ad.offer.address;
